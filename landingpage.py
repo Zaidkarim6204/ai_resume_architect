@@ -230,10 +230,12 @@ html_content = """
         .tool-card h3 { font-size: 18px; font-weight: 700; color: var(--h1-color); margin-bottom: 12px; }
         .tool-card p { font-size: 15px; color: #666666; line-height: 1.5; margin-bottom: 24px; }
         body.night-mode .tool-card p { color: #aaaaaa; }
-        .tool-card .tool-icon { font-size: 32px; color: var(--accent-dark-blue); margin-bottom: 16px; background: var(--light-border); padding: 12px; border-radius: 50%; }
+        .tool-card .tool-icon { font-size: 32px; color: var(--accent-dark-blue); margin-bottom: 16px; background: var(--light-border); padding: 12px; border-radius: 50%; display: inline-block; }
         body.night-mode .tool-card .tool-icon { background: #333; }
-        .tool-link { text-decoration: none; color: var(--accent-dark-blue); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .tool-link { text-decoration: none; color: var(--accent-dark-blue); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;}
+        body.night-mode .tool-link { color: #90caf9; }
         .score-badge { font-size: 48px; font-weight: 800; color: var(--accent-dark-blue); margin-bottom: 8px; }
+        body.night-mode .score-badge { color: #90caf9; }
         .tool-card.span-col { grid-column: span 1; grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; }
 
         /* --- HOW IT WORKS SECTION --- */
@@ -361,6 +363,7 @@ html_content = """
         </div>
         <div class="nav-links">
             <a href="#features">Features</a>
+            <a href="#howitworks">How it works</a>
             <a href="#faq">FAQ</a>
             <a href="#reviews">Reviews</a>
             <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
@@ -441,30 +444,35 @@ html_content = """
                 <p>Semantic NLP analysis compares your resume against any job description and returns a match score, matched keywords, missing gaps, and one-click tailoring.</p>
                 <div class="score-badge">94%</div>
                 <p style="font-size: 11px;">Average ATS score after tailoring</p>
+                <a href="https://airesumebuilder-g3x89b2t4vqnsdxvisf26a.streamlit.app/" class="tool-link" target="_blank">Learn more →</a>
             </div>
             
             <div class="tool-card">
                 <i class="fab fa-linkedin tool-icon" style="color:#0077b5;"></i>
                 <h3>Auto-Parse LinkedIn</h3>
                 <p>Paste your LinkedIn profile or old resume. Gemini extracts and structures everything automatically.</p>
+                <a href="https://airesumebuilder-g3x89b2t4vqnsdxvisf26a.streamlit.app/" class="tool-link" target="_blank">Try it →</a>
             </div>
 
             <div class="tool-card">
                 <i class="fas fa-file-signature tool-icon"></i>
                 <h3>AI Cover Letters</h3>
                 <p>One-click personalised cover letters tailored to each company and role. Professional, concise, and compelling.</p>
+                <a href="https://airesumebuilder-g3x89b2t4vqnsdxvisf26a.streamlit.app/" class="tool-link" target="_blank">See example →</a>
             </div>
 
             <div class="tool-card">
                 <i class="fas fa-file-download tool-icon"></i>
                 <h3>Clean PDF Export</h3>
                 <p>Download your resume in clean PDF. Your contact details are automatically rendered as clickable hyperlinks.</p>
+                <a href="https://airesumebuilder-g3x89b2t4vqnsdxvisf26a.streamlit.app/" class="tool-link" target="_blank">Export now →</a>
             </div>
 
             <div class="tool-card">
                 <i class="fas fa-door-open tool-icon"></i>
                 <h3>LinkedIn Job Portal</h3>
                 <p>Set your target job title and we surface live LinkedIn listings instantly. Direct apply in one tap.</p>
+                <a href="https://airesumebuilder-g3x89b2t4vqnsdxvisf26a.streamlit.app/" class="tool-link" target="_blank">Open portal →</a>
             </div>
         </div>
     </section>
