@@ -1,3 +1,24 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
+# 1. Setup the page
+st.set_page_config(page_title="ZNA - AI Resume Builder", layout="wide", initial_sidebar_state="collapsed")
+
+# 2. Hide Streamlit's default UI borders
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        .block-container {
+            padding: 0rem !important;
+            max-width: 100% !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# 3. Your entire HTML code securely wrapped in a Python string
+html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +64,7 @@
             --dark-border: #444444;
             --light-shadow: rgba(255,255,255,0.05);
             --dark-shadow: rgba(255,255,255,0.08);
-            --cta-bg: #e6a600; /* slightly darker yellow for dark mode */
+            --cta-bg: #e6a600;
             --logo-grad-stop-1: #90caf9;
             --logo-grad-stop-2: #3b82f6;
         }
@@ -133,6 +154,8 @@
         .hero-section {
             display: flex;
             padding-top: 20px;
+            padding-left: 5%;
+            padding-right: 5%;
             gap: 60px;
             align-items: flex-start;
         }
@@ -476,7 +499,7 @@
         }
         body.night-mode .cl-subtitle { color: #aaa; }
 
-        /* --- Built for Modern Job Seeker Grid (Feature Cards from image 7) --- */
+        /* --- Built for Modern Job Seeker Grid --- */
         .grid-section {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -554,7 +577,7 @@
             justify-content: space-between;
         }
 
-        /* --- How it Works (Numbered steps from image 6) --- */
+        /* --- How it Works --- */
         .numbered-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -598,7 +621,7 @@
         }
         body.night-mode .step-card p { color: #aaaaaa; }
 
-        /* --- Reviews Section (image 6) --- */
+        /* --- Reviews Section --- */
         .reviews-section {
             background-color: #f8fafc;
             border-top: 1px solid var(--light-border);
@@ -724,7 +747,7 @@
         }
     </style>
 </head>
-<body class="">
+<body>
 
     <nav class="navbar">
         <div class="logo-container">
@@ -974,7 +997,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 ZNA Innovate Your Career. All rights reserved.</p>
+        <p>&copy; 2026 ZNA Innovate Your Career. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1025,9 +1048,13 @@
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
-    });
-});
+                });
+            });
         });
     </script>
 </body>
 </html>
+"""
+
+# 4. Use components.html to render securely with enough height for scrolling
+components.html(html_content, height=3500, scrolling=True)
