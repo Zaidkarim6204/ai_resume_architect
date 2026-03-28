@@ -126,10 +126,11 @@ html_content = """
             color: var(--text-color);
         }
 
+        /* ORANGE/PINK GRADIENT CTA BUTTON */
         .cta-button {
             display: inline-block;
             background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
-            color: #ffffff;
+            color: #ffffff !important;
             font-weight: 700;
             font-size: 16px;
             padding: 12px 24px;
@@ -235,6 +236,15 @@ html_content = """
         .score-badge { font-size: 48px; font-weight: 800; color: var(--accent-dark-blue); margin-bottom: 8px; }
         .tool-card.span-col { grid-column: span 1; grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; }
 
+        /* --- HOW IT WORKS SECTION --- */
+        .numbered-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step-card { background-color: var(--feature-card-bg); border-radius: 12px; padding: 32px; border: 1px solid var(--light-border); box-shadow: 0 10px 30px var(--light-shadow); }
+        body.night-mode .step-card { border-color: #333; }
+        .step-card .step-number { font-size: 24px; font-weight: 800; color: #fff; background-color: var(--accent-dark-blue); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .step-card h3 { font-size: 18px; font-weight: 700; color: var(--h1-color); margin-bottom: 12px; }
+        .step-card p { font-size: 15px; color: #666666; line-height: 1.5; }
+        body.night-mode .step-card p { color: #aaaaaa; }
+
         /* --- FAQ SECTION --- */
         .faq-section {
             max-width: 800px;
@@ -307,7 +317,7 @@ html_content = """
 
         @media (max-width: 1024px) {
             .navbar { padding: 16px 5%; }
-            .nav-links { display: none; /* Hide links on very small screens for cleanliness */ }
+            .nav-links { display: none; }
             .hero-section, .numbered-grid, .testimonial-grid, .grid-section { flex-direction: column; grid-template-columns: 1fr; gap: 30px; }
             .right-content { width: 100%; justify-content: center; margin-top: 40px; }
             .blue-bg { width: 100vw; right: -5%; border-radius: 0; }
@@ -455,6 +465,30 @@ html_content = """
                 <i class="fas fa-door-open tool-icon"></i>
                 <h3>LinkedIn Job Portal</h3>
                 <p>Set your target job title and we surface live LinkedIn listings instantly. Direct apply in one tap.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="howitworks">
+        <div class="grid-header">
+            <h1>How ZNA Works</h1>
+            <p>From data paste to direct apply, our platform guides you through a seamless career optimization journey.</p>
+        </div>
+        <div class="numbered-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Paste your data</h3>
+                <p>Copy your LinkedIn profile, paste your old resume, or fill in the structured form. Our AI extracts every detail automatically.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Generate with AI</h3>
+                <p>Gemini rewrites your experience with strong action verbs, quantified achievements, and Intricate ATS-optimised keywords for your target role.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Score, tailor & apply</h3>
+                <p>Run the ATS scanner against any job description, tailor with one click, generate a cover letter, and apply directly via LinkedIn.</p>
             </div>
         </div>
     </section>
